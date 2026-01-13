@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olabisi Fagoyinbo | Workplace Mental Health Consultant</title>
+    <meta name="description" content="Olabisi Fagoyinbo - Workplace Mental Health Consultant & Advisor. Helping growing companies reduce burnout, conflict, and leadership overload.">
+    
+    <!-- Google Fonts: Playfair Display (Serif for Headings/Authority) and Inter (Sans for Body/Cleanliness) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --color-black: #111111;
+            --color-dark-gray: #333333;
+            --color-light-gray: #f8f8f8;
+            --color-white: #ffffff;
+            --color-gold: #C5A059; /* Muted, serious gold */
+            --color-gold-hover: #b08d4b;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+
+            --container-width: 1200px;
+            --border-radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-black);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .text-center { text-align: center; }
+        .text-gold { color: var(--color-gold); }
+        .bg-light { background-color: var(--color-light-gray); }
+        .bg-black { background-color: var(--color-black); color: var(--color-white); }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--color-black);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--color-gold);
+            border-color: var(--color-gold);
+            color: var(--color-white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-black);
+            border: 1px solid var(--color-black);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--color-white);
+            border-bottom: 1px solid #eaeaea;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px; /* Adjust based on actual logo aspect ratio */
+            width: auto;
+        }
+
+        .logo-text {
+            display: none; /* Hidden on small screens */
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        
+        .logo-text span {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-dark-gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .primary-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .primary-nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-dark-gray);
+            position: relative;
+        }
+
+        .primary-nav a:hover, .primary-nav a.active {
+            color: var(--color-gold);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: var(--spacing-xl) 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-dark-gray);
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+
+        .hero-disclaimer {
+            display: block;
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            border-left: 3px solid var(--color-gold);
+            padding-left: 10px;
+        }
+
+        /* --- General Sections --- */
+        section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .section-intro p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* --- Lists & Checkmarks --- */
+        .check-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .check-list li::before {
+            content: '•';
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* --- Services --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .service-card {
+            background: var(--color-white);
+            border: 1px solid #eee;
+            padding: var(--spacing-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--color-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background-color: var(--color-light-gray);
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-dark-gray);
+            font-weight: 600;
+        }
+
+        .deliverables-list {
+            margin: var(--spacing-sm) 0;
+            font-size: 0.95rem;
+        }
+        
+        .deliverables-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .deliverables-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .impact-box {
+            margin-top: auto;
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* --- How I Work (Methodology) --- */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .method-item {
+            padding: var(--spacing-md);
+            background-color: var(--color-light-gray);
+        }
+
+        .method-item h3 {
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .method-icon {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+        }
+
+        /* --- Fit / Not Fit --- */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .fit-box h3 { font-size: 1.5rem; margin-bottom: var(--spacing-sm); }
+        .not-fit-box h3 { font-size: 1.5rem; margin-bottom: var(--spacing-sm); }
+
+        .not-fit-box ul li {
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .not-fit-box ul li::before {
+            content: "×";
+            color: #999;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Resources & Insights --- */
+        .resource-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .resource-item {
+            padding: 10px 20px;
+            border: 1px solid var(--color-black);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        
+        .resource-item:hover {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .insights-preview {
+            border-left: 2px solid var(--color-gold);
+            padding-left: var(--spacing-md);
+        }
+
+        /* --- About --- */
+        .about-section {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+        
+        .about-section h2 { color: var(--color-white); }
+        .about-section h3 { color: var(--color-gold); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; margin-top: var(--spacing-md); }
+
+        /* --- Contact --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-details {
+            margin: var(--spacing-md) 0;
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--color-black);
+            color: #888;
+            padding: var(--spacing-md) 0;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p { margin-bottom: 5px; }
+        
+        /* --- Media Queries --- */
+        @media (min-width: 769px) {
+            .logo-text { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            
+            .primary-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-white);
+                border-bottom: 1px solid #eee;
+                padding: var(--spacing-md);
+            }
+
+            .primary-nav.open { display: block; }
+
+            .primary-nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hero h1 { font-size: 2.5rem; }
+            
+            .two-col, .methodology-grid, .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/e3e815f2-06b1-43fb-a9e9-8579087b306c.png?auth_key=1868309676-03458a52dce1420d8e7847df10247b9b-0-47a04298d620ae15f0fbe363483dc477" alt="OLAMOBIS Logo" style="width: 120px; height: 90px;">
+                <!--<div class="logo-text">
+                    <strong>Olabisi Fagoyinbo</strong>
+                    <span>Unfiltered. Unapologetic. Unafraid.</span>
+                </div>-->
+            </a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">&#9776;</button>
+            
+            <nav class="primary-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#how-i-work">How I Work</a></li>
+                    <li><a href="#who-i-work-with">Who I Work With</a></li>
+                    <li><a href="#insights">Insights</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Olabisi Fagoyinbo</h1>
+                    <p class="hero-subtitle">Workplace Mental Health Consultant & Advisor</p>
+                    <p>I help growing companies reduce burnout-related attrition, people conflict, and leadership overload through structured Employee Assistance Programmes (EAPs) and workplace mental health advisory.</p>
+                    <span class="hero-disclaimer">This work is designed for organisations navigating pressure, growth, and complexity, not for individual therapy or wellness coaching.</span>
+                    <div style="margin-top: var(--spacing-md);">
+                        <a href="#contact" class="btn">Start a Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="bg-light">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 class="section-title">What’s Really Showing Up in Teams</h2>
+                    <p>In many organisations, mental health challenges don’t look dramatic. They show up quietly as structural and leadership gaps.</p>
+                </div>
+                
+                <div class="two-col">
+                    <ul class="check-list">
+                        <li>Consistent underperformance from capable people</li>
+                        <li>Irritability, withdrawal, and unspoken resentment</li>
+                        <li>Managers avoiding conversations they don’t feel equipped to handle</li>
+                        <li>HR absorbing emotional risk without clear escalation paths</li>
+                        <li>Founders carrying more pressure than the organisation realises</li>
+                    </ul>
+                    <div style="border-left: 4px solid var(--color-gold); padding-left: var(--spacing-md);">
+                        <h3>These patterns are rarely personal issues.</h3>
+                        <p>They are signals of structural and leadership gaps. Addressing the root cause prevents the recurring symptoms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why EAP Fails Section -->
+        <section id="why-fail">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto var(--spacing-md) auto;">
+                    <h2 class="section-title">Why “Having an EAP” Often Changes Nothing</h2>
+                    <p>Most companies already have some form of mental health support, and still struggle. That’s usually because support is reactive and invisible until crisis hits.</p>
+                </div>
+                <div class="two-col">
+                    <div>
+                        <h3 style="color: var(--color-gold);">The Common Failures</h3>
+                        <ul class="check-list">
+                            <li>Employees don’t trust or understand how to use it</li>
+                            <li>Managers are left guessing how to respond</li>
+                            <li>Leadership receives no insight that helps decision-making</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-gold);">The Result</h3>
+                        <p>Without structure, mental health support becomes a checkbox, not a stabiliser. My work transforms support from a passive benefit into an active structural pillar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiation -->
+        <section id="differentiation" class="bg-light">
+            <div class="container">
+                <div class="two-col">
+                    <div>
+                        <h2 class="section-title">How My Work Is Different</h2>
+                        <p>I approach workplace mental health as a systems and leadership responsibility, not an individual weakness.</p>
+                        <p>The outcome is not a softer organisation. It is a more stable, accountable, and sustainable one.</p>
+                    </div>
+                    <ul class="check-list">
+                        <li>Reducing avoidable burnout before it escalates into exits or conflict</li>
+                        <li>Equipping managers to respond responsibly without becoming therapists</li>
+                        <li>Preserving confidentiality while giving leadership clarity</li>
+                        <li>Replacing emotional guesswork with clear processes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Services for Organisations</h2>
+                <p style="max-width: 700px; margin-bottom: var(--spacing-md);">I work with organisations through structured pilots and retainers. I do not offer individual therapy, emergency psychiatric care, or ad-hoc counselling sessions. Services are designed to reduce organisational risk and stabilise teams.</p>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <span class="service-tag">Entry-level Support</span>
+                        <h3>Employee Assistance Programmes (EAP)</h3>
+                        <p>A structured, confidential support system that protects employees while giving organisations visibility without breaching trust.</p>
+                        <ul class="deliverables-list">
+                            <li>Access to confidential counselling via vetted licensed clinicians</li>
+                            <li>Clear escalation and referral protocols</li>
+                            <li>Employee orientation</li>
+                            <li>Anonymous utilisation and trend reporting</li>
+                        </ul>
+                        <div class="impact-box">
+                            <strong>Organisational Impact:</strong> Earlier intervention, reduced crisis escalation, less emotional load on managers.
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <span class="service-tag">Core Engagement</span>
+                        <h3>Workplace Wellbeing & Performance</h3>
+                        <p>Designed for organisations experiencing rising pressure, burnout signals, or people-related friction.</p>
+                        <ul class="deliverables-list">
+                            <li>Burnout and wellbeing risk audits</li>
+                            <li>Manager mental health literacy training</li>
+                            <li>Conflict, boundary, and escalation frameworks</li>
+                            <li>Ongoing advisory support for HR</li>
+                        </ul>
+                        <div class="impact-box">
+                            <strong>Organisational Impact:</strong> Fewer unresolved people issues, more confident managers, reduced disengagement.
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <span class="service-tag">High-Trust Advisory</span>
+                        <h3>Leadership & Founder Advisory</h3>
+                        <p>Focused support for those carrying decision-making, people leadership, and organisational pressure.</p>
+                        <ul class="deliverables-list">
+                            <li>Founder and executive advisory sessions</li>
+                            <li>Support around decision fatigue and people complexity</li>
+                            <li>Psychological safety and culture diagnostics</li>
+                            <li>Change and transition advisory</li>
+                        </ul>
+                        <div class="impact-box">
+                            <strong>Organisational Impact:</strong> Clearer leadership decisions, reduced founder bottlenecks, stable leadership behavior.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section id="how-i-work" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">How I Work</h2>
+                <p style="max-width: 700px; margin-bottom: var(--spacing-md);">In organisational settings, mental health challenges are rarely about resilience alone. They are usually the result of unclear expectations, unmanaged pressure, and untrained leadership responses. My work focuses on building structure around human realities.</p>
+
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3><span class="method-icon">&#128274;</span> Confidentiality & Boundaries</h3>
+                        <p>Confidentiality is foundational. I never share individual identities or session content. I share anonymous trends, utilisation patterns, and systemic risk indicators. This allows leadership to act responsibly without breaching trust.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><span class="method-icon">&#128100;</span> Manager Enablement</h3>
+                        <p>Managers are not therapists. I train them to recognize early warning signs, escalate appropriately, hold boundaries without avoidance, and respond without panic or overreach. This reduces harm and risk.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><span class="method-icon">&#128202;</span> Programme Structure</h3>
+                        <p>Engagements typically follow one of three paths: a time-bound pilot, a retainer-based EAP or advisory programme, or leadership-only advisory support. All engagements are clearly scoped.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><span class="method-icon">&#129658;</span> Clinical Partnerships</h3>
+                        <p>Where clinical care is required, I work with vetted licensed professionals through structured referral pathways. I do not replace clinical services; I design systems that work alongside them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who I Work With -->
+        <section id="who-i-work-with">
+            <div class="container">
+                <h2 class="section-title">Who I Work With</h2>
+                
+                <div class="comparison-grid">
+                    <div class="fit-box">
+                        <h3 style="color: var(--color-gold);">Ideal Fit</h3>
+                        <ul class="check-list">
+                            <li>SMEs and scaleups (10–250 employees)</li>
+                            <li>Founder-led or fast-growing teams</li>
+                            <li>Organisations under delivery, people, or growth pressure</li>
+                            <li>HR-light teams managing complex human dynamics</li>
+                            <li>Founders and HR leaders seeking clarity, not band-aids</li>
+                        </ul>
+                    </div>
+                    <div class="not-fit-box">
+                        <h3 style="color: #777;">Not a Fit</h3>
+                        <ul>
+                            <li>Companies seeking checkbox compliance</li>
+                            <li>Cultures hostile to psychological safety</li>
+                            <li>Teams expecting therapy disguised as consulting</li>
+                            <li>Organisations unwilling to support manager capability</li>
+                        </ul>
+                        <p style="font-size: 0.85rem; font-style: italic; margin-top: 15px;">Clear fit protects everyone involved.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--spacing-lg); text-align: center;">
+                    <h4>How Engagement Typically Starts</h4>
+                    <p style="max-width: 600px; margin: 0 auto;">An initial exploratory conversation &rarr; A time-bound pilot to assess fit and impact &rarr; An ongoing EAP or advisory engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights -->
+        <section id="insights" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Insights</h2>
+                <p>Workplace Mental Health, Through a Leadership Lens. I think in public about systems, leadership, and organisational perspective. This is not therapy content; it is organisational analysis.</p>
+                
+                <div class="two-col" style="margin-top: var(--spacing-md);">
+                    <div>
+                        <h3>Recent Topics</h3>
+                        <ul class="check-list">
+                            <li>Why burnout often appears as attitude or performance issues</li>
+                            <li>How untrained managers unintentionally create emotional risk</li>
+                            <li>Why confidentiality does not mean silence</li>
+                            <li>The hidden emotional load of leadership</li>
+                            <li>Why most EAPs fail quietly</li>
+                        </ul>
+                    </div>
+                    <div class="insights-preview">
+                        <p><em>"When workplace mental health is unmanaged, the cost is paid quietly—through burnout, attrition, conflict, and poor decisions. Structure changes outcomes."</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <div class="container text-center">
+                <h2 class="section-title">Resources</h2>
+                <p>Practical Tools for HR & Managers. These resources are designed for HR leaders and people managers. They do not replace professional mental health care.</p>
+                
+                <div style="margin-top: var(--spacing-md);">
+                    <div class="resource-list" style="justify-content: center;">
+                        <div class="resource-item">Manager escalation frameworks</div>
+                        <div class="resource-item">Burnout early-warning checklists</div>
+                        <div class="resource-item">Difficult conversation guides</div>
+                        <div class="resource-item">Mental health orientation templates</div>
+                        <div class="resource-item">Founder self-assessment tools</div>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">The goal is clarity, not emotional labour.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="two-col">
+                    <div>
+                        <h2>About Olabisi Fagoyinbo</h2>
+                        <p>I am a workplace mental health consultant and advisor focused on helping organisations manage pressure, people complexity, and emotional risk responsibly.</p>
+                        <p>My work sits at the intersection of Mental health, Leadership behaviour, and Organisational systems. I support companies in building structures that protect both people and performance.</p>
+                        <h3>Why This Work Matters</h3>
+                        <p>Structure changes outcomes.</p>
+                    </div>
+                    <div style="border-left: 1px solid #444; padding-left: var(--spacing-md);">
+                        <h3>Ethics & Scope</h3>
+                        <p>I work within clearly defined professional boundaries.</p>
+                        <ul class="check-list">
+                            <li>I do not provide individual therapy</li>
+                            <li>I partner with licensed clinicians where clinical care is required</li>
+                            <li>I prioritise confidentiality, clarity, and ethical practice</li>
+                        </ul>
+                        <p>This work is designed to stabilise organisations—not personalise pain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container contact-container">
+                <h2 class="section-title">Start a Conversation</h2>
+                <p>If you are exploring structured mental health support for your organisation, you are welcome to reach out for an exploratory conversation.</p>
+                <p style="font-size: 0.9rem; color: #666;">All conversations are confidential and obligation-free.</p>
+                
+                <div class="contact-details">
+                    <a href="mailto:email@example.com" class="btn btn-outline">Email Me</a>
+                    <a href="#" class="btn btn-outline">WhatsApp Business</a>
+                </div>
+
+                <div style="margin-top: var(--spacing-md); text-align: left; background: var(--color-light-gray); padding: var(--spacing-md); border-radius: var(--border-radius);">
+                    <h4 style="margin-bottom: 10px;">You may share:</h4>
+                    <ul class="check-list">
+                        <li>Your role</li>
+                        <li>Company size</li>
+                        <li>The challenge you are navigating</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="margin-bottom: 10px;">
+                <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-white); font-size: 1.2rem;">OLAMOBISI</span>
+            </div>
+            <p>&copy; 2026 Olabisi Fagoyinbo. All rights reserved.</p>
+            <p>Unfiltered. Unapologetic. Unafraid.</p>
+        </div>
+    </footer>
+
+    <!-- Minimal JS for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('.primary-nav');
+            const navLinks = document.querySelectorAll('.primary-nav a');
+
+            // Toggle menu
+            mobileBtn.addEventListener('click', () => {
+                nav.classList.toggle('open');
+                mobileBtn.innerHTML = nav.classList.contains('open') ? '&times;' : '&#9776;';
+            });
+
+            // Close menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    mobileBtn.innerHTML = '&#9776;';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
