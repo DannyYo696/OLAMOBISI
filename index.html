@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olabisi Fagoyinbo | Workplace Mental Health Consultant</title>
-    <meta name="description" content="Olabisi Fagoyinbo - Workplace Mental Health Consultant & Advisor. Helping growing companies reduce burnout, conflict, and leadership overload.">
+    <meta name="description" content="Olabisi Fagoyinbo - Workplace Mental Health Consultant & Advisor.">
     
-    <!-- Google Fonts: Playfair Display (Serif for Headings/Authority) and Inter (Sans for Body/Cleanliness) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
     <link rel="icon" href="https://z-cdn-media.chatglm.cn/files/e3e815f2-06b1-43fb-a9e9-8579087b306c.png?auth_key=1868309676-03458a52dce1420d8e7847df10247b9b-0-47a04298d620ae15f0fbe363483dc477" />
 
     <style>
@@ -20,7 +19,7 @@
             --color-dark-gray: #333333;
             --color-light-gray: #f8f8f8;
             --color-white: #ffffff;
-            --color-gold: #C5A059; /* Muted, serious gold */
+            --color-gold: #C5A059; 
             --color-gold-hover: #b08d4b;
             
             --font-heading: 'Playfair Display', serif;
@@ -35,22 +34,15 @@
             --border-radius: 4px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
         body {
             font-family: var(--font-body);
             color: var(--color-black);
             background-color: var(--color-white);
             line-height: 1.6;
-            font-size: 16px;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -60,33 +52,13 @@
             margin-bottom: var(--spacing-sm);
         }
 
-        p {
-            margin-bottom: var(--spacing-sm);
-        }
+        p { margin-bottom: var(--spacing-sm); }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; object-fit: cover; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s ease;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* --- Utility Classes --- */
-        .container {
-            width: 90%;
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing-sm);
-        }
-
+        /* --- Utility --- */
+        .container { width: 90%; max-width: var(--container-width); margin: 0 auto; padding: 0 var(--spacing-sm); }
         .text-center { text-align: center; }
         .text-gold { color: var(--color-gold); }
         .bg-light { background-color: var(--color-light-gray); }
@@ -106,381 +78,176 @@
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
+        .btn:hover { background-color: var(--color-gold); border-color: var(--color-gold); color: var(--color-white); }
+        .btn-outline { background-color: transparent; color: var(--color-black); border: 1px solid var(--color-black); }
+        .btn-outline:hover { background-color: var(--color-black); color: var(--color-white); }
 
-        .btn:hover {
-            background-color: var(--color-gold);
-            border-color: var(--color-gold);
-            color: var(--color-white);
-        }
+        .section-title { font-size: 2.5rem; margin-bottom: var(--spacing-md); position: relative; display: inline-block; }
 
-        .btn-outline {
-            background-color: transparent;
-            color: var(--color-black);
-            border: 1px solid var(--color-black);
-        }
+        /* --- Header --- */
+        header { position: sticky; top: 0; z-index: 1000; background: var(--color-white); border-bottom: 1px solid #eaeaea; padding: var(--spacing-sm) 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo img { height: 40px; width: auto; }
+        .logo-text { display: none; flex-direction: column; line-height: 1.1; }
+        .logo-text span { font-family: var(--font-body); font-size: 0.75rem; color: var(--color-dark-gray); letter-spacing: 1px; text-transform: uppercase; }
 
-        .btn-outline:hover {
-            background-color: var(--color-black);
-            color: var(--color-white);
-        }
+        .primary-nav ul { display: flex; gap: 25px; }
+        .primary-nav a { font-size: 0.9rem; font-weight: 500; color: var(--color-dark-gray); }
+        .primary-nav a:hover, .primary-nav a.active { color: var(--color-gold); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-md);
-            position: relative;
-            display: inline-block;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: var(--color-white);
-            border-bottom: 1px solid #eaeaea;
-            padding: var(--spacing-sm) 0;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px; /* Adjust based on actual logo aspect ratio */
-            width: auto;
-        }
-
-        .logo-text {
-            display: none; /* Hidden on small screens */
-            flex-direction: column;
-            line-height: 1.1;
-        }
+        /* --- Hero Section (Updated with Images) --- */
+        .hero { padding: var(--spacing-xl) 0; }
+        .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); align-items: center; }
         
-        .logo-text span {
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            color: var(--color-dark-gray);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .primary-nav ul {
-            display: flex;
-            gap: 25px;
-        }
-
-        .primary-nav a {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--color-dark-gray);
-            position: relative;
-        }
-
-        .primary-nav a:hover, .primary-nav a.active {
-            color: var(--color-gold);
-        }
-
-        /* Mobile Menu Toggle */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding: var(--spacing-xl) 0;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--color-dark-gray);
-            margin-bottom: var(--spacing-md);
-            font-weight: 300;
-        }
-
-        .hero-disclaimer {
-            display: block;
-            font-size: 0.85rem;
-            color: #777;
-            font-style: italic;
-            margin-bottom: var(--spacing-md);
-            border-left: 3px solid var(--color-gold);
-            padding-left: 10px;
-        }
-
-        /* --- General Sections --- */
-        section {
-            padding: var(--spacing-lg) 0;
-        }
-
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            align-items: center;
-        }
-
-        .section-intro p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-bottom: var(--spacing-md);
-        }
-
-        /* --- Lists & Checkmarks --- */
-        .check-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-        }
-
-        .check-list li::before {
-            content: '•';
-            color: var(--color-gold);
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -5px;
-        }
-
-        /* --- Services --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
-        .service-card {
-            background: var(--color-white);
-            border: 1px solid #eee;
-            padding: var(--spacing-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--color-gold);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-        }
-
-        .service-tag {
-            display: inline-block;
-            background-color: var(--color-light-gray);
-            padding: 4px 8px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-dark-gray);
-            font-weight: 600;
-        }
-
-        .deliverables-list {
-            margin: var(--spacing-sm) 0;
-            font-size: 0.95rem;
-        }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: var(--spacing-md); }
+        .hero-subtitle { font-size: 1.25rem; color: var(--color-dark-gray); margin-bottom: var(--spacing-md); font-weight: 300; }
+        .hero-disclaimer { display: block; font-size: 0.85rem; color: #777; font-style: italic; margin-bottom: var(--spacing-md); border-left: 3px solid var(--color-gold); padding-left: 10px; }
         
-        .deliverables-list li {
-            margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-        }
-        
-        .deliverables-list li::before {
-            content: "-";
-            position: absolute;
-            left: 0;
-            color: var(--color-gold);
-        }
-
-        .impact-box {
-            margin-top: auto;
-            padding-top: var(--spacing-sm);
-            border-top: 1px solid #eee;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        /* --- How I Work (Methodology) --- */
-        .methodology-grid {
+        .hero-images {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-md);
-        }
-
-        .method-item {
-            padding: var(--spacing-md);
-            background-color: var(--color-light-gray);
-        }
-
-        .method-item h3 {
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .method-icon {
-            color: var(--color-gold);
-            font-size: 1.5rem;
-        }
-
-        /* --- Fit / Not Fit --- */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-md);
-        }
-
-        .fit-box h3 { font-size: 1.5rem; margin-bottom: var(--spacing-sm); }
-        .not-fit-box h3 { font-size: 1.5rem; margin-bottom: var(--spacing-sm); }
-
-        .not-fit-box ul li {
-            color: #666;
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-        }
-        .not-fit-box ul li::before {
-            content: "×";
-            color: #999;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-        }
-
-        /* --- Resources & Insights --- */
-        .resource-list {
-            display: flex;
-            flex-wrap: wrap;
+            grid-template-rows: repeat(2, 1fr);
             gap: 15px;
+            position: relative;
         }
 
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .hero-img:hover { transform: scale(1.02); }
+
+        /* Creating an overlapping masonry look */
+        .hero-img-1 { grid-column: 1 / 2; grid-row: 1 / 3; height: 500px; }
+        .hero-img-2 { grid-column: 2 / 3; grid-row: 1 / 2; height: 240px; margin-top: 40px;}
+        .hero-img-3 { grid-column: 2 / 3; grid-row: 2 / 3; height: 240px; }
+
+        /* --- General Layouts --- */
+        section { padding: var(--spacing-lg) 0; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); align-items: center; }
+        
+        .check-list li { position: relative; padding-left: 30px; margin-bottom: 15px; }
+        .check-list li::before { content: '•'; color: var(--color-gold); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+
+        /* --- Services Grid --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md); }
+        .service-card { background: var(--color-white); border: 1px solid #eee; padding: var(--spacing-md); transition: transform 0.3s ease; display: flex; flex-direction: column; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 3px solid var(--color-gold); }
+        .service-card h3 { font-size: 1.5rem; }
+        .service-tag { display: inline-block; background: var(--color-light-gray); padding: 4px 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--spacing-sm); color: var(--color-dark-gray); font-weight: 600; }
+        .deliverables-list { margin: var(--spacing-sm) 0; font-size: 0.95rem; }
+        .deliverables-list li { margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .deliverables-list li::before { content: "-"; position: absolute; left: 0; color: var(--color-gold); }
+        .impact-box { margin-top: auto; padding-top: var(--spacing-sm); border-top: 1px solid #eee; font-size: 0.9rem; color: #555; }
+
+        /* --- Methodology --- */
+        .methodology-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); }
+        .method-item { padding: var(--spacing-md); background-color: var(--color-light-gray); }
+        .method-item h3 { font-size: 1.25rem; display: flex; align-items: center; gap: 10px; }
+        .method-icon { color: var(--color-gold); font-size: 1.5rem; }
+
+        /* --- Endless Loop Gallery --- */
+        .gallery-section { padding: var(--spacing-md) 0; overflow: hidden; background: var(--color-black); color: var(--color-white); }
+        .marquee-container { display: flex; width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: flex; animation: scroll 30s linear infinite; }
+        .marquee-item { width: 300px; height: 200px; margin: 0 15px; flex-shrink: 0; border-radius: 4px; overflow: hidden; position: relative; }
+        .marquee-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s; }
+        .marquee-item:hover img { opacity: 1; }
+        
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- Who I Work With --- */
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-top: var(--spacing-md); }
+        .not-fit-box ul li { color: #666; position: relative; padding-left: 25px; margin-bottom: 10px; }
+        .not-fit-box ul li::before { content: "×"; color: #999; font-size: 1.2rem; position: absolute; left: 0; }
+
+        /* --- Resources (Interactive) --- */
+        .resource-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .resource-item {
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: 1px solid var(--color-black);
             border-radius: 30px;
             font-size: 0.9rem;
             transition: all 0.2s;
-            cursor: default;
+            cursor: pointer;
+            background: var(--color-white);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .resource-item:hover {
-            background-color: var(--color-black);
-            color: var(--color-white);
+        .resource-item:hover { background-color: var(--color-black); color: var(--color-white); }
+        .resource-item::after {
+            content: "↓"; 
+            font-size: 0.8rem; 
+            margin-left: 8px;
+            display: inline-block;
+            transition: transform 0.2s;
         }
+        .resource-item:hover::after { transform: translateY(4px); }
 
-        .insights-preview {
-            border-left: 2px solid var(--color-gold);
-            padding-left: var(--spacing-md);
+        /* --- Modal for Resources --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); z-index: 2000;
+            display: none; justify-content: center; align-items: center;
+            opacity: 0; transition: opacity 0.3s ease;
         }
-
-        /* --- About --- */
-        .about-section {
-            background-color: var(--color-black);
-            color: var(--color-white);
-        }
+        .modal-overlay.active { display: flex; opacity: 1; }
         
+        .modal-content {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            width: 90%; max-width: 500px;
+            position: relative;
+            border-top: 4px solid var(--color-gold);
+        }
+        .close-modal {
+            position: absolute; top: 15px; right: 20px;
+            font-size: 1.5rem; cursor: pointer; color: #999;
+            border: none; background: none;
+        }
+        .close-modal:hover { color: var(--color-black); }
+        
+        .modal-form input {
+            width: 100%; padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        .modal-form input:focus { outline: 1px solid var(--color-gold); border-color: var(--color-gold); }
+        .modal-desc { font-style: italic; color: #555; margin-bottom: 20px; display: block; }
+
+        /* --- Insights & About --- */
+        .about-section { background-color: var(--color-black); color: var(--color-white); }
         .about-section h2 { color: var(--color-white); }
-        .about-section h3 { color: var(--color-gold); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; margin-top: var(--spacing-md); }
-
-        /* --- Contact --- */
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .contact-details { margin: var(--spacing-md) 0; display: flex; justify-content: center; gap: var(--spacing-md); flex-wrap: wrap; }
+        .contact-item { display: flex; align-items: center; gap: 8px; font-weight: 600; }
         
-        .contact-details {
-            margin: var(--spacing-md) 0;
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-        }
-
         /* --- Footer --- */
-        footer {
-            background-color: var(--color-black);
-            color: #888;
-            padding: var(--spacing-md) 0;
-            border-top: 1px solid #333;
-            text-align: center;
-            font-size: 0.85rem;
-        }
+        footer { background-color: var(--color-black); color: #888; padding: var(--spacing-md) 0; border-top: 1px solid #333; text-align: center; font-size: 0.85rem; }
 
-        footer p { margin-bottom: 5px; }
-        
-        /* --- Media Queries --- */
-        @media (min-width: 769px) {
-            .logo-text { display: flex; }
-        }
-
+        /* --- Responsive --- */
+        @media (min-width: 769px) { .logo-text { display: flex; } }
         @media (max-width: 768px) {
             .mobile-menu-btn { display: block; }
-            
             .primary-nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--color-white);
-                border-bottom: 1px solid #eee;
-                padding: var(--spacing-md);
+                display: none; position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--color-white); border-bottom: 1px solid #eee; padding: var(--spacing-md);
             }
-
             .primary-nav.open { display: block; }
-
-            .primary-nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .hero h1 { font-size: 2.5rem; }
+            .primary-nav ul { flex-direction: column; align-items: center; gap: 15px; }
             
-            .two-col, .methodology-grid, .comparison-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero .container, .two-col, .methodology-grid, .comparison-grid { grid-template-columns: 1fr; }
+            
+            
+            /* Show single image on mobile instead of grid if preferred, currently hidden for simplicity */
+            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -489,16 +256,11 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="/" class="logo">
-                <img src="https://z-cdn-media.chatglm.cn/files/e3e815f2-06b1-43fb-a9e9-8579087b306c.png?auth_key=1868309676-03458a52dce1420d8e7847df10247b9b-0-47a04298d620ae15f0fbe363483dc477" alt="OLAMOBIS Logo" style="width: 120px; height: 90px;">
-                <!--<div class="logo-text">
-                    <strong>Olabisi Fagoyinbo</strong>
-                    <span>Unfiltered. Unapologetic. Unafraid.</span>
-                </div>-->
+            <a href="#" class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/e3e815f2-06b1-43fb-a9e9-8579087b306c.png?auth_key=1868309676-03458a52dce1420d8e7847df10247b9b-0-47a04298d620ae15f0fbe363483dc477" alt="OLAMOBIS Logo" style="width: 370px; height: 90px; margin-left: -90px;">
+                
             </a>
-            
             <button class="mobile-menu-btn" aria-label="Toggle navigation">&#9776;</button>
-            
             <nav class="primary-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -515,7 +277,7 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section (Updated with Right Images) -->
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -527,6 +289,13 @@
                         <a href="#contact" class="btn">Start a Conversation</a>
                     </div>
                 </div>
+                <!-- Right Side Images -->
+                <div class="hero-images">
+                    <!-- Using placeholder images with a professional/business vibe -->
+                    <img src="https://picsum.photos/seed/olabisi1/400/600" alt="Consulting session" class="hero-img hero-img-1">
+                    <img src="https://picsum.photos/seed/olabisi2/400/300" alt="Office architecture" class="hero-img hero-img-2">
+                    <img src="https://picsum.photos/seed/olabisi3/400/300" alt="Team meeting" class="hero-img hero-img-3">
+                </div>
             </div>
         </section>
 
@@ -537,7 +306,6 @@
                     <h2 class="section-title">What’s Really Showing Up in Teams</h2>
                     <p>In many organisations, mental health challenges don’t look dramatic. They show up quietly as structural and leadership gaps.</p>
                 </div>
-                
                 <div class="two-col">
                     <ul class="check-list">
                         <li>Consistent underperformance from capable people</li>
@@ -554,7 +322,7 @@
             </div>
         </section>
 
-        <!-- Why EAP Fails Section -->
+
         <section id="why-fail">
             <div class="container">
                 <div class="text-center" style="max-width: 800px; margin: 0 auto var(--spacing-md) auto;">
@@ -578,7 +346,7 @@
             </div>
         </section>
 
-        <!-- Differentiation -->
+
         <section id="differentiation" class="bg-light">
             <div class="container">
                 <div class="two-col">
@@ -655,6 +423,7 @@
             </div>
         </section>
 
+
         <!-- Methodology -->
         <section id="how-i-work" class="bg-light">
             <div class="container">
@@ -678,6 +447,28 @@
                         <h3><span class="method-icon">&#129658;</span> Clinical Partnerships</h3>
                         <p>Where clinical care is required, I work with vetted licensed professionals through structured referral pathways. I do not replace clinical services; I design systems that work alongside them.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endless Loop Gallery (New Section) -->
+        <section class="gallery-section">
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <!-- Duplicated content for seamless loop. Abstract/Atmospheric images -->
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch1/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch2/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch3/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch4/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch5/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch6/600/400" alt="Atmosphere"></div>
+                    <!-- Repeat for loop -->
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch1/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch2/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch3/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch4/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch5/600/400" alt="Atmosphere"></div>
+                    <div class="marquee-item"><img src="https://picsum.photos/seed/arch6/600/400" alt="Atmosphere"></div>
                 </div>
             </div>
         </section>
@@ -717,7 +508,7 @@
             </div>
         </section>
 
-        <!-- Insights -->
+
         <section id="insights" class="bg-light">
             <div class="container">
                 <h2 class="section-title">Insights</h2>
@@ -741,21 +532,53 @@
             </div>
         </section>
 
-        <!-- Resources -->
+        <!-- Insights -->
+        <section id="insights" class="bg-light">
+            <div class="container text-center">
+                <div style="margin-top: -80px;">
+                    <a href="blog.html" class="btn">Get More Insights</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources (Updated with Logic) -->
         <section id="resources">
             <div class="container text-center">
                 <h2 class="section-title">Resources</h2>
-                <p>Practical Tools for HR & Managers. These resources are designed for HR leaders and people managers. They do not replace professional mental health care.</p>
+                <p>Practical Tools for HR & Managers. Click to download.</p>
                 
-                <div style="margin-top: var(--spacing-md);">
-                    <div class="resource-list" style="justify-content: center;">
-                        <div class="resource-item">Manager escalation frameworks</div>
-                        <div class="resource-item">Burnout early-warning checklists</div>
-                        <div class="resource-item">Difficult conversation guides</div>
-                        <div class="resource-item">Mental health orientation templates</div>
-                        <div class="resource-item">Founder self-assessment tools</div>
+                <div class="resource-list" style="margin-top: var(--spacing-md);">
+                    <!-- Data attributes hold the specific content for the modal -->
+                    <div class="resource-item" 
+                         data-title="Manager Escalation Frameworks" 
+                         data-desc="A step-by-step guide to identifying issues and escalating them safely." 
+                         data-pdf="manager-escalation.pdf">
+                        Manager escalation frameworks
                     </div>
-                    <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">The goal is clarity, not emotional labour.</p>
+                    <div class="resource-item" 
+                         data-title="Burnout Checklist" 
+                         data-desc="A checklist to spot early warning signs of team burnout before it affects performance." 
+                         data-pdf="burnout-checklist.pdf">
+                        Burnout early-warning checklists
+                    </div>
+                    <div class="resource-item" 
+                         data-title="Difficult Conversation Guides" 
+                         data-desc="Scripts and frameworks to navigate sensitive discussions with care and authority." 
+                         data-pdf="conversation-guides.pdf">
+                        Difficult conversation guides
+                    </div>
+                    <div class="resource-item" 
+                         data-title="Orientation Templates" 
+                         data-desc="Ready-to-use slides for introducing mental health protocols to your team." 
+                         data-pdf="orientation-templates.pdf">
+                        Mental health orientation templates
+                    </div>
+                    <div class="resource-item" 
+                         data-title="Founder Self-Assessment" 
+                         data-desc="A non-clinical tool to help founders assess their own pressure points." 
+                         data-pdf="founder-assessment.pdf">
+                        Founder self-assessment tools
+                    </div>
                 </div>
             </div>
         </section>
@@ -788,7 +611,7 @@
         <!-- Contact -->
         <section id="contact">
             <div class="container contact-container">
-                <h2 class="section-title">Start a Conversation</h2>
+                <h2 class="section-title" style="text-align: center;">Start a Conversation</h2>
                 <p>If you are exploring structured mental health support for your organisation, you are welcome to reach out for an exploratory conversation.</p>
                 <p style="font-size: 0.9rem; color: #666;">All conversations are confidential and obligation-free.</p>
                 
@@ -797,47 +620,125 @@
                     <a href="#" class="btn btn-outline">WhatsApp Business</a>
                 </div>
 
-                <div style="margin-top: var(--spacing-md); text-align: left; background: var(--color-light-gray); padding: var(--spacing-md); border-radius: var(--border-radius);">
+                <!--<div style="margin-top: var(--spacing-md); text-align: left; background: var(--color-light-gray); padding: var(--spacing-md); border-radius: var(--border-radius);">
                     <h4 style="margin-bottom: 10px;">You may share:</h4>
                     <ul class="check-list">
                         <li>Your role</li>
                         <li>Company size</li>
                         <li>The challenge you are navigating</li>
                     </ul>
-                </div>
+                </div>-->
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <div style="margin-bottom: 10px;">
-                <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-white); font-size: 1.2rem;">OLAMOBISI</span>
-            </div>
-            <p>&copy; 2026 Olabisi Fagoyinbo. All rights reserved.</p>
-            <p>Unfiltered. Unapologetic. Unafraid.</p>
+            <p>&copy; 2023 Olabisi Fagoyinbo. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Minimal JS for Mobile Menu -->
+    <!-- Resource Modal (Hidden by default) -->
+    <div class="modal-overlay" id="resourceModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h3 id="modalTitle">Resource Title</h3>
+            <span id="modalDesc" class="modal-desc">Resource description goes here.</span>
+            <p style="font-size: 0.9rem; margin-bottom: 10px;">Enter your details to receive the PDF download:</p>
+            <form class="modal-form" id="downloadForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Job Role" required>
+                <input type="tel" placeholder="Email Address" required>
+                <button type="submit" class="btn" style="width: 100%;">Download PDF</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
+        // Mobile Menu
         document.addEventListener('DOMContentLoaded', () => {
             const mobileBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('.primary-nav');
             const navLinks = document.querySelectorAll('.primary-nav a');
 
-            // Toggle menu
             mobileBtn.addEventListener('click', () => {
                 nav.classList.toggle('open');
                 mobileBtn.innerHTML = nav.classList.contains('open') ? '&times;' : '&#9776;';
             });
 
-            // Close menu when a link is clicked
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     nav.classList.remove('open');
                     mobileBtn.innerHTML = '&#9776;';
                 });
+            });
+
+            // --- Resource Modal Logic ---
+            const modal = document.getElementById('resourceModal');
+            const closeModal = document.getElementById('closeModal');
+            const form = document.getElementById('downloadForm');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDesc = document.getElementById('modalDesc');
+            let currentPdf = "";
+
+            // Attach click events to all resource items
+            document.querySelectorAll('.resource-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const title = item.getAttribute('data-title');
+                    const desc = item.getAttribute('data-desc');
+                    currentPdf = item.getAttribute('data-pdf');
+
+                    // Populate modal
+                    modalTitle.textContent = title;
+                    modalDesc.textContent = desc;
+
+                    // Show modal
+                    modal.classList.add('active');
+                });
+            });
+
+            // Close modal on X click
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+                form.reset();
+            });
+
+            // Close modal on outside click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    form.reset();
+                }
+            });
+
+            // Handle Form Submission (Simulate Download)
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate processing
+                const btn = form.querySelector('button');
+                const originalText = btn.textContent;
+                btn.textContent = "Downloading...";
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    // Create a dummy link to trigger download
+                    // In a real scenario, this would point to the actual file path
+                    const link = document.createElement('a');
+                    link.href = '#'; // Replace with currentPdf path
+                    link.download = currentPdf || 'resource.pdf';
+                    // For demo purposes, we just close and alert (optional)
+                    
+                    // Reset UI
+                    modal.classList.remove('active');
+                    form.reset();
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    
+                    // Optional: Success feedback
+                    // alert("Your download should start shortly.");
+                }, 1500);
             });
         });
     </script>
